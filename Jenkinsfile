@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Download Data') {
             steps {
-                sh 'python3 scripts/download_data.py'
+                sh 'python3 scp/scripts/download_data.py'
             }
         }
         stage('Preprocess Data') {
