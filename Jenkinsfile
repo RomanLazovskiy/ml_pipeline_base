@@ -10,22 +10,22 @@ pipeline {
         }
         stage('Download Data') {
             steps {
-                sh 'python3 /usr/src/app/scripts/download_data.py'
+                sh 'python3 scripts/download_data.py'
             }
         }
         stage('Preprocess Data') {
             steps {
-                sh 'python3 /usr/src/app/scripts/preprocess.py'
+                sh 'python3 scripts/preprocess.py'
             }
         }
         stage('Train Model') {
             steps {
-                sh 'python3 /usr/src/app/scripts/train_model.py'
+                sh 'python3 scripts/train_model.py'
             }
         }
         stage('Test Model') {
             steps {
-                sh 'python3 /usr/src/app/scripts/test_model.py'
+                sh 'python3 scripts/test_model.py'
             }
         }
     }

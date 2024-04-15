@@ -16,13 +16,6 @@ ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install --upgrade pip && \
     pip install numpy pandas scikit-learn matplotlib seaborn jupyter
 
-# Копируем скрипты и другие необходимые файлы в контейнер
-COPY scripts/ /usr/src/app/scripts/
-COPY Jenkinsfile /usr/src/app/
-WORKDIR /usr/src/app
-
-# Предоставляем права на выполнение скриптов
-RUN chmod +x /usr/src/app/scripts/*.py
 
 # Возвращаем пользователя Jenkins
 USER jenkins
